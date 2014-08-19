@@ -1,0 +1,12 @@
+<phpunit bootstrap="module/Album/test/Bootstrap.php" backupGlobals="false"
+backupStaticAttributes="false" strict="true" verbose="true">
+    <testsuites>
+        <testsuite name="zend-integration">
+            <directory>module/Album/test</directory>
+        </testsuite>
+    </testsuites>
+    
+   	<logging>
+		<log type="junit" target="build/logs/junit.xml"/>
+	</logging>
+</phpunit>

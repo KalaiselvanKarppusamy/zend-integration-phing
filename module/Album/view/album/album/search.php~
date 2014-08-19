@@ -1,0 +1,30 @@
+<?php
+
+ $title = 'Search albums by title';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+ <label for="title">Search by Title</label>
+ <input type="text" name="title" required autofocus autocomplete="on">
+ <td><button type="submit" name="submit">Submit</button>
+
+ <table class="table">
+ <tr>
+     <th>Title</th>
+     <th>Artist</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($albums as $album) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($album->title);?></td>
+     <td><?php echo $this->escapeHtml($album->artist);?></td>
+     <td>
+         <a href="<?php echo $this->url('album',
+             array('action'=>'edit', 'id' => $album->id));?>">Edit</a>
+         <a href="<?php echo $this->url('album',
+             array('action'=>'delete', 'id' => $album->id));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>   

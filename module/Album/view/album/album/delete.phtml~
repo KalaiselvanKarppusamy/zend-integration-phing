@@ -1,0 +1,13 @@
+<?php
+try 
+{
+	$db = new PDO("mysql:host=localhost; dbname=zf2tutorial", "root", "root");
+	$sth = $db->prepare("DELETE FROM album WHERE title = ?");
+	$sth->execute(array(""));
+}
+catch(PDOException $e)
+{
+	printf("We had a problem: %s\n", $e->getMessage());
+}
+?>
+</body>

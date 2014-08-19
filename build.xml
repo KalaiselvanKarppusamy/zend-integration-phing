@@ -1,0 +1,28 @@
+<project name="zf-ci-demo" default="build" basedir="."> 	
+	<property name="source" value="module"/>
+	<property name="source_comma_sep" value="module"/>
+	<target name="build" depends="clean,phpunit"/>
+	
+	<target name="clean">
+	<!-- Clean up -->
+		<delete dir="build/api"/>
+		<delete dir="build/code-browser"/>
+		<delete dir="build/coverage"/>
+		<delete dir="build/logs"/>
+		<delete dir="build/pdepend"/>
+
+		<!-- Create build directories -->
+		<mkdir dir="build/api"/>
+		<mkdir dir="build/code-browser"/>
+		<mkdir dir="build/coverage"/>
+		<mkdir dir="build/logs"/>
+		<mkdir dir="build/pdepend"/>
+	</target> 	 
+
+	<target name="phpunit" description="Run unit tests with PHPUnit">
+		<echo message="Running unit tests with PHPUnit" />	
+		<!--<exec executable="phpunit" dir="module/User/tests/User/">-->
+		<exec executable="phpunit" failonerror="true">
+		</exec>
+	</target> 	
+</project>
