@@ -25,4 +25,15 @@
         --coverage-clover ${basedir}/build/logs/clover.xml
         --coverage-html ${basedir}/build/coverage"/>
     </target>
+	
+	<target name="phpcs">
+        <phpcodesniffer standard="Zend" allowedFileExtensions="php">
+            <fileset dir="${basedir}">
+                <include name="**/*.php" />
+                <exclude name="**/test/**" />
+            </fileset>
+            <formatter type="default" usefile="false"  />
+            <formatter type="checkstyle" outfile="${basedir}/build/logs/checkstyle.xml" />
+        </phpcodesniffer>
+    </target>
 </project>
