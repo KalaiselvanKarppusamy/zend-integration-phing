@@ -20,10 +20,10 @@
 	</target> 	 
 	
 	<target name="phpunit" description="Run unit tests with PHPUnit">
-         <exec command="phpunit --configuration=${basedir}/phpunit.xml
-        --log-junit ${basedir}/build/logs/junit.xml
-        --coverage-clover ${basedir}/build/logs/clover.xml
-        --coverage-html ${basedir}/build/coverage"/>
+         <exec command="phpunit --configuration=phpunit.xml
+        --log-junit build/logs/junit.xml
+        --coverage-clover build/logs/clover.xml
+        --coverage-html build/coverage"/>
     </target>
 	
 	<target name="phpcs">
