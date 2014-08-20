@@ -19,9 +19,16 @@
 		<mkdir dir="build/pdepend"/>
 	</target> 	 
 
-	<target name="phpunit" description="Run unit tests with PHPUnit">
+	<!--<target name="phpunit" description="Run unit tests with PHPUnit">
 		<echo message="Running unit tests with PHPUnit" />			
 		<exec executable="phpunit --configuration=${basedir}/phpunit.xml">
 		</exec>
-	</target>
+	</target>-->
+	
+	<target name="phpunit" description="Run unit tests with PHPUnit">
+         <exec command="phpunit --configuration=${basedir}/phpunit.xml
+        --log-junit ${basedir}/build/logs/junit.xml
+        --coverage-clover ${basedir}/build/logs/clover.xml
+        --coverage-html ${basedir}/build/coverage"/>
+    </target>
 </project>
