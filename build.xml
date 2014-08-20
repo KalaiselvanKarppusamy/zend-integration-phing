@@ -21,7 +21,7 @@
 
 	<target name="phpunit" description="Run unit tests with PHPUnit">
 		<echo message="Running unit tests with PHPUnit" />			
-		<exec executable="phpunit" checkreturn="true">
+		<exec executable="phpunit">
 		</exec>
 	</target> 	
 </project>
