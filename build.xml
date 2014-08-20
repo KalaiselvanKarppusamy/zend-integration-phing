@@ -1,7 +1,7 @@
 <project name="zf-ci-demo" default="build" basedir="."> 	
 	<property name="source" value="module"/>
 	<property name="source_comma_sep" value="module"/>
-	<target name="build" depends="clean,phpunit"/>
+	<target name="build" depends="clean,phpunit,phpcs"/>
 	
 	<target name="clean">
 	<!-- Clean up -->
