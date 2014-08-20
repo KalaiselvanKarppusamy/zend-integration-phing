@@ -21,7 +21,7 @@
 
 	<target name="phpunit" description="Run unit tests with PHPUnit">
 		<echo message="Running unit tests with PHPUnit" />			
-		<exec command="phpunit --configuration=phpunit.xml">		
+		<exec command="phpunit --configuration=${basedir}/phpunit.xml">
 		</exec>
 	</target>
 </project>
