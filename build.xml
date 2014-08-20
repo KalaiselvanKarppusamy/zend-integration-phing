@@ -1,7 +1,7 @@
 <project name="zf-ci-demo" default="build" basedir="."> 	
 	<property name="source" value="module"/>
 	<property name="source_comma_sep" value="module"/>
-	<target name="build" depends="clean,phpcs"/>
+	<target name="build" depends="clean,phpunit,phpcs"/>
 	
 	<target name="clean">
 	<!-- Clean up -->
@@ -18,6 +18,13 @@
 		<mkdir dir="build/logs"/>
 		<mkdir dir="build/pdepend"/>
 	</target> 	 
+	
+	<target name="phpunit" description="Run unit tests with PHPUnit">
+         <exec command="phpunit --configuration=${basedir}/phpunit.xml
+        --log-junit ${basedir}/build/logs/junit.xml
+        --coverage-clover ${basedir}/build/logs/clover.xml
+        --coverage-html ${basedir}/build/coverage"/>
+    </target>
 	
 	<target name="phpcs">
         <phpcodesniffer standard="Zend" allowedFileExtensions="php">
